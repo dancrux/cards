@@ -17,6 +17,12 @@ class ScaffoldExample extends StatelessWidget {
           IconButton(onPressed: _tapButton, icon: Icon(Icons.access_alarm))
         ],
       ),
+       floatingActionButton: FloatingActionButton(
+         backgroundColor: Colors.deepPurpleAccent,
+         child: Icon(Icons.add),
+         onPressed: () => debugPrint("Big Man"),
+         focusColor: Colors.deepPurple,
+       ),
        bottomNavigationBar: BottomNavigationBar(
          items: [
            BottomNavigationBarItem(icon: Icon(Icons.home_rounded), label: ("Home")),

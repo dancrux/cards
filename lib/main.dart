@@ -1,8 +1,9 @@
+import 'package:cards/ui/CardsHome.dart';
 import 'package:cards/ui/Home.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
-  home: ScaffoldExample(),
+  home: CardsHome(),
 ));
 
 // class MyApp extends StatelessWidget {
