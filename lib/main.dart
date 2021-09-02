@@ -3,7 +3,7 @@ import 'package:cards/ui/Home.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
-  home: CardsHome(),
+  home: Quotes(),
 ));
 
 // class MyApp extends StatelessWidget {

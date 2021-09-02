@@ -1,4 +1,8 @@
+import 'dart:ffi';
+
+
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import 'custom/CustomButton.dart';
 
@@ -48,9 +52,81 @@ class ScaffoldExample extends StatelessWidget {
   }
 }
 
+class Quotes extends StatefulWidget {
+  const Quotes({Key? key}) : super(key: key);
 
+  @override
+  _QuotesState createState() => _QuotesState();
+}
 
+class _QuotesState extends State<Quotes> {
+  int _counter = 0;
+  List sentences = [
+    "This is a boy",
+        " This is a family tree, This is an animal tissue ",
+        "This is an ancient plant, This is Africa, This is a tall house",
+        "This is a Big Place"
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        // constraints: BoxConstraints.expand(width: 250, height:180),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Expanded(
+              child: Center(
+                child: Container(
+                    width: 350,
+                    height: 220,
+                    margin: EdgeInsets.all(30.0),
+                    decoration: BoxDecoration(
+                        color: Colors.blueGrey,
+                        borderRadius: BorderRadius.circular(14)
+                    ),
+                    child: Center(child: Text(sentences[_counter % sentences.length],
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16.0
+                      ),
+                    )
+                    )
+                ),
+        )
 
+            ),
+            Divider(thickness: 1.3),
+            Padding(
+              padding: const EdgeInsets.only(top:8.0),
+              child: TextButton.icon(
+                  onPressed: _showSentence,
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.blueAccent),
+                    foregroundColor: MaterialStateProperty.all(Colors.white)
+                  ),
+                  icon: Icon(Icons.wb_sunny),
+                  label: Text("Inspire",
+                    style: TextStyle(
+                    fontSize: 18.5,
+
+                  ),
+                    )),
+            ),
+            Spacer()
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _showSentence() {
+    setState(() {
+      _counter += 1;
+    });
+
+  }
+}
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
